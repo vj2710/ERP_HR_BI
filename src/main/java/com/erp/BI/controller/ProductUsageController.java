@@ -38,7 +38,7 @@ public class ProductUsageController {
         return total_profit;
     }
 
-    @GetMapping("sales/{month}/{year}/profits/")
+    @GetMapping("/sales/{month}/{year}/profits/")
     public double highProfits(
             @PathVariable(value = "month") String month,
             @PathVariable(value = "year") int year
@@ -52,7 +52,7 @@ public class ProductUsageController {
         return profit;
     }
 
-    @GetMapping("sales/{month}/{year}/loss/")
+    @GetMapping("/sales/{month}/{year}/loss/")
     public double lossesIncurred(
             @PathVariable(value = "month") String month,
             @PathVariable(value = "year") int year
