@@ -48,11 +48,11 @@ public class EmployeeController {
         String jsonToString = gson.toJson(insertNewJoinee);
 
         Map<String, Object> map = gson.fromJson(jsonToString, new TypeToken<Map<String, Object>>(){}.getType());
-        int empID = employeeService.addNewJoinee((char) map.get("gender"),
+        int empID = employeeService.addNewJoinee(((String) map.get("gender")).charAt(0),
                 (String) map.get("dept"), (String) map.get("jobTitle"),
-                (int) map.get("manager"), (char) map.get("active"));
+                Integer.parseInt((String) map.get("manager")), ((String) map.get("active")).charAt(0));
 
-        boolean updateHiring = hiringService.addNewJoinee(empID, (char) map.get("emplType"));
+        boolean updateHiring = hiringService.addNewJoinee(empID, ((String) map.get("emplType")).charAt(0));
 
         if(updateHiring)
             return "Successfully added new hires";
@@ -70,6 +70,4 @@ public class EmployeeController {
         else
             return "Failed to calculate and update salary of employee.";
     }
-
-
 }

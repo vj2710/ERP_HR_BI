@@ -35,7 +35,7 @@ public class EmployeeInfo implements Serializable {
     private String emailId;
     private Date dateOfBirth;
     private Character gender;
-    private Integer phoneNo;
+    private Long phoneNo;
     private String department;
     private String jobTitle;
     private Integer managerId;
@@ -81,11 +81,11 @@ public class EmployeeInfo implements Serializable {
         this.gender = gender;
     }
 
-    public int getPhoneNo() {
+    public Long getPhoneNo() {
         return phoneNo;
     }
 
-    public void setPhoneNo(int phoneNo) {
+    public void setPhoneNo(Long phoneNo) {
         this.phoneNo = phoneNo;
     }
 
