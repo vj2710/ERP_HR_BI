@@ -1,0 +1,198 @@
+drop database erp;
+create database erp;
+
+use erp;
+
+create table EmployeeInfo (EmployeeId int primary key auto_increment, Name varchar(50), EmailId varchar(50), DateOfBirth Date, Gender char(1), PhoneNo int, Department varchar(30), JobTitle varchar(20), ManagerId int, ActiveFlag char(1));
+
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('M', 'IT', 'Junior Developer', 23, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('M', 'IT', 'Junior Developer', 23, 'N');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('M', 'HR', 'Intern', 18, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('M', 'Finance', 'Manager', 25, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('M', 'Sales', 'Representative', 16, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('M', 'Marketing', 'Intern', 10, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('M', 'Marketing', 'Intern', 10, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('M', 'IT', 'Senior Developer', 23, 'N');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('M', 'IT', 'Senior Developer', 23, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('M', 'Marketing', 'Manager', 25, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('M', 'HR', 'Senior HR', 18, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('M', 'IT', 'Analyst', 23, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'Sales', 'Representative', 16, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'Finance', 'Manager', 25, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'IT', 'Junior Developer', 23, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'Sales', 'Manager', 16, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'Finance', 'Intern', 4, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'HR', 'Manager', 25, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'Finance', 'Junior Accountant', 4, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'Finance', 'Junior Accountant', 4, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'IT', 'Junior Developer', 23, 'N');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'IT', 'Junior Developer', 23, 'N');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'IT', 'Manager', 25, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'IT', 'Senior Developer', 23, 'Y');
+insert into EmployeeInfo (Gender, Department, JobTitle, ManagerId, ActiveFlag) values ('F', 'All', 'Executive', 0, 'Y');
+
+
+create table HiringInfo (HiringId int primary key auto_increment, EmployeeId int, EmploymentType char(1), JoiningDate Date, LeavingDate Date, TrainingDate Date, DocumentsSubmitted char(1) DEFAULT 'N', FOREIGN KEY (EmployeeId) REFERENCES EmployeeInfo(EmployeeId));
+
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (1, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (2, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (3, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (4, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (5, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (6, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (7, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (8, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (9, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (10, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (11, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (12, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (13, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (14, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (15, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (16, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (17, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (18, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (19, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (20, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (21, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (22, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (23, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (24, 'C', current_timestamp, current_timestamp);
+insert into HiringInfo (EmployeeId, EmploymentType, JoiningDate, TrainingDate) values (25, 'C', current_timestamp, current_timestamp);
+
+
+create table Timesheet (TimesheetId int primary key auto_increment, EmployeeId int, Month varchar(10), FinancialYear int, TotalHoursPunched float, TotalLeavesTaken int, RatingByManager int, FOREIGN KEY (EmployeeId) REFERENCES EmployeeInfo(EmployeeId));
+
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (1, 'Nov', 2018, 100, 20, 3);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (2, 'Nov', 2018, 200, 10, 4);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (3, 'Nov', 2018, 150, 10, 3);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (4, 'Nov', 2018, 125.5, 10, 4);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (5, 'Nov', 2018, 175, 15, 3);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (6, 'Nov', 2018, 75, 10, 2);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (7, 'Nov', 2018, 100, 20, 3);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (8, 'Nov', 2018, 120, 10, 4);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (9, 'Nov', 2018, 120, 7, 4);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (10, 'Nov', 2018, 100, 20, 3);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (11, 'Nov', 2018, 120, 7, 4);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (12, 'Nov', 2018, 100, 20, 3);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (13, 'Nov', 2018, 125.5, 10, 4);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (14, 'Nov', 2018, 175, 15, 3);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (15, 'Nov', 2018, 120, 10, 4);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (16, 'Nov', 2018, 200, 10, 4);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (17, 'Nov', 2018, 150, 10, 3);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (18, 'Nov', 2018, 120, 7, 4);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (19, 'Nov', 2018, 150, 10, 3);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (20, 'Nov', 2018, 120, 7, 4);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (21, 'Nov', 2018,  100, 20, 3);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (22, 'Nov', 2018, 75, 10, 2);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (23, 'Nov', 2018,  200, 10, 4);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (24, 'Nov', 2018, 125.5, 10, 4);
+insert into Timesheet (EmployeeId, Month, FinancialYear, TotalHoursPunched, TotalLeavesTaken, RatingByManager) values (25, 'Nov', 2018,  175, 15, 3);
+
+create table PositionSalary(PositionId int primary key, Position varchar(50), Department varchar(30), BaseSalary int, MonthlyLeaves int, MonthlyHours int, EmploymentType char(1));
+
+insert into PositionSalary(PositionId, Position, Department, BaseSalary, MonthlyLeaves, MonthlyHours, EmploymentType) values (1001, 'Junior Developer', 'IT', 4000, 4, 160, 'C');
+insert into PositionSalary(PositionId, Position, Department, BaseSalary, MonthlyLeaves, MonthlyHours, EmploymentType) values (1002, 'Senior Developer', 'IT', 6000, 4, 160, 'C');
+insert into PositionSalary(PositionId, Position, Department, BaseSalary, MonthlyLeaves, MonthlyHours, EmploymentType) values (1003, 'Intern', 'IT', 3000, 4, 160, 'C');
+insert into PositionSalary(PositionId, Position, Department, BaseSalary, MonthlyLeaves, MonthlyHours, EmploymentType) values (1004, 'Junior Developer', 'Finance', 4000, 4, 160, 'C');
+insert into PositionSalary(PositionId, Position, Department, BaseSalary, MonthlyLeaves, MonthlyHours, EmploymentType) values (1005, 'Representative', 'Sales', 4000, 4, 160, 'C');
+insert into PositionSalary(PositionId, Position, Department, BaseSalary, MonthlyLeaves, MonthlyHours, EmploymentType) values (1006, 'Manager', 'Marketing', 4000, 4, 160, 'C');
+insert into PositionSalary(PositionId, Position, Department, BaseSalary, MonthlyLeaves, MonthlyHours, EmploymentType) values (1007, 'Intern', 'HR', 3000, 4, 160, 'C');
+insert into PositionSalary(PositionId, Position, Department, BaseSalary, MonthlyLeaves, MonthlyHours, EmploymentType) values (1008, 'Intern', 'Finance', 4000, 4, 160, 'C');
+insert into PositionSalary(PositionId, Position, Department, BaseSalary, MonthlyLeaves, MonthlyHours, EmploymentType) values (1009, 'Intern', 'Sales', 4000, 4, 160, 'C');
+insert into PositionSalary(PositionId, Position, Department, BaseSalary, MonthlyLeaves, MonthlyHours, EmploymentType) values (1010, 'Manager', 'IT', 4000, 4, 160, 'C');
+
+create table Projects(ProjectId int primary key, TeamId varchar(30), ManagerID varchar(30), AllocatedPartyFund int, TeamBuildingActivity char(1));
+
+insert into Projects(ProjectId, TeamId, ManagerId, AllocatedPartyFund, TeamBuildingActivity) values (5001, 'T501','23', 5000, 'Y');
+insert into Projects(ProjectId, TeamId, ManagerId, AllocatedPartyFund, TeamBuildingActivity) values (5002, 'S501','18', 5000, 'Y');
+insert into Projects(ProjectId, TeamId, ManagerId, AllocatedPartyFund, TeamBuildingActivity) values (5003, 'T502','16', 5000, 'Y');
+insert into Projects(ProjectId, TeamId, ManagerId, AllocatedPartyFund, TeamBuildingActivity) values (5004, 'T503','10', 5000, 'Y');
+insert into Projects(ProjectId, TeamId, ManagerId, AllocatedPartyFund, TeamBuildingActivity) values (5005, 'T505','23', 5000, 'Y');
+insert into Projects(ProjectId, TeamId, ManagerId, AllocatedPartyFund, TeamBuildingActivity) values (5006, 'T506','18', 5000, 'Y');
+
+drop table Payroll;
+create table Payroll(PayrollId INT PRIMARY KEY AUTO_INCREMENT, EmployeeId INT, BasePay INT, Incentives INT DEFAULT 0, TotalPay INT, PaymentType CHAR(2), UPDATE_TIMESTAMP TIMESTAMP DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY (EmployeeId) REFERENCES EmployeeInfo(EmployeeId));
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(1,  2500, 300, 100, 'PC');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(2,  3000, 200, 100, 'PC');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(3,  2200, 200, 80, 'PC');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(4,  2500, 200, 80, 'PC');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(5,  3000, 200, 80, 'WT');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(6,  2200, 200, 80, 'WT');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(7,  2200, 200, 80, 'WT');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(8,  2500, 300, 80, 'WT');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(9,  3000, 300, 80, 'WT');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(10, 4000, 350, 80, 'WT');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(11, 3000, 350, 100, 'PC');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(12, 4000, 350, 100, 'PC');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(13, 2200, 350, 100, 'PC');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(14, 2500, 350, 100, 'PC');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(15, 2200, 300, 200, 'ET');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(16, 3000, 300, 200, 'ET');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(17, 3000, 300, 200, 'ET');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(18, 2200, 375, 200, 'ET');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(19, 4000, 375, 200, 'ET');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(20, 2200, 375, 200, 'ET');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(21, 3000, 375, 200, 'PC');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(22, 2200, 375, 200, 'PC');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(23, 2500, 375, 100, 'PC');
+insert into Payroll(EmployeeId, BasePay, Incentives, TotalPay, PaymentType) values(24, 2200, 300, 100, 'PC');
+
+
+DELIMITER $$
+CREATE TRIGGER ins_payroll AFTER UPDATE ON HiringInfo 
+FOR EACH ROW
+BEGIN
+IF NEW.TrainingDate IS NOT NULL AND NEW.DocumentsSubmitted = 'Y' THEN
+insert into Payroll(EmployeeId, BasePay, TotalPay, PaymentType, UPDATE_TIMESTAMP) values(NEW.EmployeeId, (SELECT BaseSalary from PositionSalary p, EmployeeInfo e where e.EmployeeId = NEW.EmployeeId and p.Department=e.Department and p.position=e.JobTitle), (SELECT BaseSalary from PositionSalary p, EmployeeInfo e where e.EmployeeId = NEW.EmployeeId and p.Department=e.Department and p.position=e.JobTitle), 'PC', CURRENT_TIMESTAMP);
+END IF;
+END$$
+
+CREATE TABLE client (
+  clientID int(11) NOT NULL AUTO_INCREMENT,
+  clientName varchar(45) DEFAULT NULL,
+  location varchar(45) DEFAULT NULL,
+  productsEnrolled int(11) DEFAULT NULL,
+  potentialProductsID int(11) DEFAULT NULL,
+  clientClass varchar(45) DEFAULT NULL,
+  clientSince date DEFAULT NULL,
+  PRIMARY KEY (clientID)
+);
+
+INSERT INTO client VALUES (1,'ATech','NewYork',5,3,'Technology','1990-01-01');
+INSERT INTO client VALUES (2,'BTech','Montreal',3,1,'Technology','2000-05-01');
+INSERT INTO client VALUES (3,'CTech','Toronto',1,2,'Business','2017-12-12');
+INSERT INTO client VALUES (4,'DTech','Montreal',5,1,'Technology','1992-01-31');
+INSERT INTO client VALUES (5,'ETech','Chicago',4,4,'Technology','2000-11-12');
+
+CREATE TABLE product (
+  productID int(11) NOT NULL AUTO_INCREMENT,
+  productName varchar(45) DEFAULT NULL,
+  launchDate date DEFAULT NULL,
+  productType varchar(45) DEFAULT NULL,
+  productClass varchar(45) DEFAULT NULL,
+  productStatus varchar(45) DEFAULT NULL,
+  manufacturingCost double DEFAULT NULL,
+  marketingCost double DEFAULT NULL,
+  otherExpenses double DEFAULT NULL,
+  PRIMARY KEY (productID)
+);
+
+INSERT INTO product VALUES (1,'Black Zara Skirt','2000-01-01','clothes','Clothing','Accepted',2,20,2); INSERT INTO product VALUES(2,'Green Raynold Pen','1990-05-01','pen','Stationary','Declined',1,3,1); INSERT INTO product VALUES(3,'Black Forever 21 shirt','2010-06-01','clothes','Clothing','Accepted',2,7,1); INSERT INTO product VALUES(4,'Sketchbook','2005-12-11','book','Stationary','Accepted',1.75,3.95,0.5); INSERT INTO product VALUES(5,'White Addidas socks','2001-01-09','clothes','Clothing','Declined',4.25,20.15,5);
+
+CREATE TABLE sales (
+  salesID int(11) NOT NULL AUTO_INCREMENT,
+  unitsSold int(11) DEFAULT NULL,
+  month varchar(45) DEFAULT NULL,
+  financialYear int(11) DEFAULT NULL,
+  productID int(11) DEFAULT NULL,
+  clientID int(11) DEFAULT NULL,
+  sellingPrice double DEFAULT NULL,
+  PRIMARY KEY (salesID),
+  KEY productID_idx (productID),
+  KEY clientID_idx (clientID),
+  CONSTRAINT clientID FOREIGN KEY (clientID) REFERENCES client (clientID) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT productID FOREIGN KEY (productID) REFERENCES product (productID) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+
+INSERT INTO sales VALUES (1,5,'March',2018,5,1,30); INSERT INTO sales VALUES (2,10,'February',2018,4,2,20); INSERT INTO sales VALUES (3,15,'January',2018,3,3,6); INSERT INTO sales VALUES (4,90,'December',2018,2,4,3); INSERT INTO sales VALUES (5,100,'May',2018,1,5,1); INSERT INTO sales VALUES (6,100,'May',2018,2,5,5); INSERT INTO sales VALUES (7,100,'May',2018,2,5,7); INSERT INTO sales VALUES (8,100,'June',2018,3,4,20); INSERT INTO sales VALUES (9,150,'January',2018,5,3,40); INSERT INTO sales VALUES (10,200,'January',2018,4,3,50);

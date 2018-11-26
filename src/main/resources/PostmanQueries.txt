@@ -1,0 +1,36 @@
+BI service
+1. localhost:8080/BI/growthManagement/products/startDate/1990-01-01/endDate/2018-01-01
+2. localhost:8080/BI/potentialClient/client/leastSoldProduct/ATech/
+3. localhost:8080/BI/potentialClient/clientSince/1990-01-01/
+4. localhost:8080/BI/productUsage/sales/2/May/2018/
+5. localhost:8080/BI/productUsage/sales/2/May/2018/totalProfit/
+6. localhost:8080/BI/productUsage/sales/May/2018/profits/
+7. localhost:8080/BI/productUsage/sales/May/2018/loss/
+8. localhost:8080/BI/stock/getPrice/
+
+HR service
+GET - http://localhost:8080/HR/employee/search?id=1&dept=IT&jobTitle=Junior Developer
+
+POST - http://localhost:8080/employee/newEmployee
+	RequestBody - 
+		{
+			"gender": "F",
+			"dept": "IT",
+			"jobTitle": "Junior Developer",
+			"manager": "23",
+			"active": "Y",
+			"emplType": "C"
+		}
+	where emplType - type of employee("C" - contractor, "P" - part-time, "I" - intern, "F" - full time)
+
+PUT - http://localhost:8080/employee/increment/1
+	
+GET - http://localhost:8080/HR/hiring/joinees?training=2018-11-12&docs=N&joining=2018-11-12
+	
+PUT - http://localhost:8080/HR/hiring/1?training=2018-11-12&docs=N
+
+GET - http://localhost:8080/HR/teamFund/partyFund?projectId=5001&managerId=23&teamBuildingActFlag=Y
+	
+GET - http://localhost:8080/HR/timesheet/1?month=Nov&year=2018
+
+GET - http://localhost:8080/HR/timesheet/sendIntimation
